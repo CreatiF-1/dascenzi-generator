@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="libraries/style.css" rel="stylesheet">
+  
+</head>
+
+<body class="p-6 sm:p-12 bg-gray-100 flex flex-wrap justify-center">
+  <div class="flex flex-col mypad">
+
+
+    <div class="mb-6">
+      <h1 class="text-4xl text-red-800 font-bold">D'Ascenzi Pavimenti</h1>
+      <h2 class="text-xl font-medium text-black">Generatore di simboli per spille aziendali</h2>
+    </div>
+
+    <div id="inputs" class="flex flex-col myinput">
+      <div class="max-w-xs">
+        <label for="email" class="block text-xl mb-3 font-medium leading-5 text-black">
+          Quanti anni di esperienza hai ?
+        </label>
+        <div class="mt-1 relative rounded-md border-2">
+          <select id="role" class="form-select block w-full sm:text-sm sm:leading-5" placeholder="you@example" aria-describedby="email-description">
+            <option selected disabled value="Anni">Anni di esperienza</option>
+            <option value="2">1-3</option>
+            <option value="4">4-7</option>
+            <option value="8">8+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="inputs" class="flex flex-col myinput">
+      <div class="max-w-xs">
+        <label for="email" class="block text-xl mb-3 font-medium leading-5 text-black">
+          Qual è il tuo sesso
+        </label>
+        <div class="mt-1 relative rounded-md border-2">
+          <select id="role2" class="form-select block w-full sm:text-sm sm:leading-5" placeholder="you@example" aria-describedby="email-description">
+            <option selected disabled value="Sesso">Sesso</option>
+            <option value="Uomo">Uomo</option>
+            <option value="Donna">Donna</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <span class="inline-flex rounded-md  mr-6">
+      <button id="randomize" onclick="Randomize()" type="button" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base leading-6 font-medium rounded-md text-black bg-white hover:text-gray-600">
+        Random
+      </button>
+    </span>
+
+  </div>
+  <script src="libraries/p5.js"></script>
+  <script src="libraries/sketch.js"></script>
+  <script src="libraries/helper.js"></script>
+</body>
+
+</html>

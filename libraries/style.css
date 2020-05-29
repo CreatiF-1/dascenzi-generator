@@ -1,0 +1,17 @@
+body{
+    padding: 50px;
+    align-items: center;
+}
+#role{
+    height: 35px;
+}
+#role2{
+    height: 35px;
+}
+.myinput{
+    padding-bottom: 30px;
+}
+
+.mypad {
+    padding:50px;
+}
