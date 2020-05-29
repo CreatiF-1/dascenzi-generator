@@ -1,3 +1,4 @@
+//Inizializzo la funzione che mi permette di disegnare l'esagono
 function hexagon(posX, posY, radius) {
   const rotAngle = 360 / 6
   beginShape()
@@ -8,6 +9,8 @@ function hexagon(posX, posY, radius) {
   endShape(CLOSE)
 }
 
+//Inizializzo la funzione che mi permette di ricavare la variabile
+//per la costruzione dell'esagono
 function pointOnCirle(posX, posY, radius, angle) {
   const x = posX + radius * cos(angle)
   const y = posY + radius * sin(angle)

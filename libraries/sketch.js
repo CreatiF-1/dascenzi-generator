@@ -6,8 +6,12 @@ let DefaultPalette = []
 let PaletteValue = "Sesso"
 let Esperienza = 2
 let Spessore = 1
+
+
 function setup() {
   createCanvas(500, 500 )
+
+  //Inizializzo le palette per le forme
   MenPalette = [
     color(239, 160, 11, 70), //giallo
     color(2, 103, 193, 70), //blue
@@ -31,6 +35,8 @@ function setup() {
   rectMode(CENTER)
 }
 
+
+//Nel draw stampo esclusivamente le forme comuni a qualsiasi fattore
 function draw() {
   defaultLines()
   outlineHexagon()
@@ -41,6 +47,8 @@ function draw() {
   internalHexagon()
 }
 
+
+//Inzializzo tutte le mie forme
 function defaultMen() {
   fill(getRandomFromPalette())
   blendMode(LIGHTEST)
@@ -214,6 +222,8 @@ function externalHexagon() {
   pop()
 }
 
+//Analizzo il primo select, aggiungo un event listener che permetta il 
+//cambiamento di determinate variabili a seconda del valore del select
 const roleSelect = document.getElementById('role');
 roleSelect.addEventListener('change', (e) => {
   Esperienza = e.target.value
@@ -255,6 +265,8 @@ roleSelect2.addEventListener('change', (e) => {
 })
 
 
+//Inizializzo la funziona che mi permette di cambiare palette in base al
+//cambiamento del valore del select
 function getRandomFromPalette() {
   if (PaletteValue == "Sesso") {
     const rando = floor(random(0, DefaultPalette.length))
@@ -268,6 +280,8 @@ function getRandomFromPalette() {
   }
 }
 
+//Funzione che mi permette di randomizzare determinate forme e le palette sempre a seconda dei valori 
+//attuali dei select e quindi delle mie variabili
 function Randomize() {
   if (PaletteValue == "Sesso") {
     clear()
