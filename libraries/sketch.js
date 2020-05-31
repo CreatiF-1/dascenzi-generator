@@ -7,7 +7,7 @@ let WomenPalette = []
 let DefaultPalette = []
 let PaletteValue = "Sesso"
 let Esperienza = 2
-let Spessore = 1
+let Spessore = 1 
 
 
 function setup() {
