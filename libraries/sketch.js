@@ -1,7 +1,7 @@
 //Dichiaro le variabili che mi servono, alcune di 
 //esse cambieranno in base al valore dei select
 const SYMBOL_SIZE = 350
-let sides = 2
+let SIDES = 2
 let MenPalette = []
 let WomenPalette = []
 let DefaultPalette = []
