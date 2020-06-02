@@ -97,10 +97,10 @@ function outlineHexagon() {
 
 function advancedLines() {
   const stepOut = 8
-  const numSteps = (sides * floor(random(1, 3)))
+  const numSteps = (sides * round(random(1, 3)))
   const step = (SYMBOL_SIZE / 2) / numSteps
-  const start = floor(random(0, numSteps))
-  const stop = floor(random(start, numSteps + 1))
+  const start = round(random(0, numSteps))
+  const stop = round(random(start, numSteps + 1))
   let numShapes = sides*1.5
   const angle = 360 / numShapes
   fill(getRandomFromPalette())
@@ -138,7 +138,7 @@ function internalCirles1() {
   const numShapes = sides
   const angle = 360 / numShapes
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const position = (SYMBOL_SIZE / 4) - (shapeSize / floor(random(4, 8)))
+  const position = (SYMBOL_SIZE / 4) - (shapeSize / round(random(4, 8)))
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
   stroke("black")
@@ -174,7 +174,7 @@ function internalHexagon() {
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
   const numShapes = sides
   const angle = 360 / numShapes
-  const position = (SYMBOL_SIZE / 2) - (shapeSize / floor(random(2, 4)))
+  const position = (SYMBOL_SIZE / 2) - (shapeSize / round(random(2, 4)))
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
   stroke("black")
@@ -271,13 +271,13 @@ roleSelect2.addEventListener('change', (e) => {
 //cambiamento del valore del select
 function getRandomFromPalette() {
   if (paletteValue == "Sesso") {
-    const rando = floor(random(0, defaultPalette.length))
+    const rando = round(random(0, defaultPalette.length))
     return defaultPalette[rando]
   } else if (paletteValue == "Uomo") {
-    const rando = floor(random(0, menPalette.length))
+    const rando = round(random(0, menPalette.length))
     return menPalette[rando]
   } else if (paletteValue == "Donna") {
-    const rando = floor(random(0, womenPalette.length))
+    const rando = round(random(0, womenPalette.length))
     return womenPalette[rando]
   }
 }
