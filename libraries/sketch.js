@@ -99,7 +99,7 @@ function advancedLines() {
   const stepOut = 8
   const numSteps = (sides * int(random(1, 3)))
   const step = (SYMBOL_SIZE / 2) / numSteps
-  const start = int(random(0, numSteps))
+  const start = int(random(numSteps))
   const stop = int(random(start, numSteps + 1))
   let numShapes = sides*1.5
   const angle = 360 / numShapes
