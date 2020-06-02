@@ -5,7 +5,7 @@ let sides = 2
 let menPalette = []
 let womenPalette = []
 let defaultPalette = []
-let PaletteValue = "Sesso"
+let paletteValue = "Sesso"
 let esperienza = 2
 let spessore = 1 
 
@@ -231,15 +231,15 @@ roleSelect.addEventListener('change', (e) => {
   esperienza = e.target.value
   sides = esperienza
   spessore = sides / 2
-  if (PaletteValue == "Sesso") {
+  if (paletteValue == "Sesso") {
     clear()
     draw()
-  } else if (PaletteValue == "Uomo") {
+  } else if (paletteValue == "Uomo") {
     clear()
     externalHexagon()
     defaultMen()
     draw()
-  } else if (PaletteValue == "Donna") {
+  } else if (paletteValue == "Donna") {
     clear()
     externalCircle()
     defaultWomen()
@@ -270,13 +270,13 @@ roleSelect2.addEventListener('change', (e) => {
 //Inizializzo la funziona che mi permette di cambiare palette in base al
 //cambiamento del valore del select
 function getRandomFromPalette() {
-  if (PaletteValue == "Sesso") {
+  if (paletteValue == "Sesso") {
     const rando = floor(random(0, defaultPalette.length))
     return defaultPalette[rando]
-  } else if (PaletteValue == "Uomo") {
+  } else if (paletteValue == "Uomo") {
     const rando = floor(random(0, menPalette.length))
     return menPalette[rando]
-  } else if (PaletteValue == "Donna") {
+  } else if (paletteValue == "Donna") {
     const rando = floor(random(0, womenPalette.length))
     return womenPalette[rando]
   }
@@ -285,15 +285,15 @@ function getRandomFromPalette() {
 //Funzione che mi permette di randomizzare determinate forme e le palette sempre a seconda dei valori 
 //attuali dei select e quindi delle mie variabili
 function Randomize() {
-  if (PaletteValue == "Sesso") {
+  if (paletteValue == "Sesso") {
     clear()
     draw()
-  } else if (PaletteValue == "Uomo") {
+  } else if (paletteValue == "Uomo") {
     clear()
     externalHexagon()
     defaultMen()
     draw()
-  } else if (PaletteValue == "Donna") {
+  } else if (paletteValue == "Donna") {
     clear()
     externalCircle()
     defaultWomen()
