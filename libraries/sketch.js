@@ -41,12 +41,11 @@ function setup() {
 //Nel draw stampo esclusivamente le forme comuni a qualsiasi fattore
 function draw() {
   defaultLines()
-  outlineHexagon()
+  myHexagon(2,2,4,14)
   outlineCircle()
   advancedLines()
-  internalCirles2()
-  internalCirles1()
-  internalHexagon()
+  myCircle(2,2,2,1,1)
+  myCircle(4,4,8,6,6)
 }
 
 
@@ -134,11 +133,11 @@ function defaultLines() {
   pop()
 }
 
-function internalCirles1() {
+function myCircle(divisore, divisore2, divisore3, divisoreSize) {
   const numShapes = sides
   const angle = 360 / numShapes
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const position = (SYMBOL_SIZE / 4) - (shapeSize / round(random(4, 8)))
+  const position = (SYMBOL_SIZE / divisore) - (shapeSize / random(divisore2,divisore3))
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
   stroke("black")
@@ -146,17 +145,17 @@ function internalCirles1() {
   push()
   translate(width / 2, height / 2)
   for (let i = 0; i <= numShapes; i++) {
-    ellipse(position, 0, shapeSize / 6, shapeSize / 6)
+    ellipse(position, 0, shapeSize/divisoreSize, shapeSize/divisoreSize)
     rotate(angle)
   }
   pop()
 }
 
-function internalCirles2() {
+function myHexagon(divHex1,divHex2,divHex3, divHex4){
+  const shapeSize = (SYMBOL_SIZE / 2) * 0.93
   const numShapes = sides
   const angle = 360 / numShapes
-  const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const position = (SYMBOL_SIZE / 2) - (shapeSize / 2)
+  const position = (SYMBOL_SIZE / divHex1) - (shapeSize / random(divHex2, divHex3))
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
   stroke("black")
@@ -164,61 +163,7 @@ function internalCirles2() {
   push()
   translate(width / 2, height / 2)
   for (let i = 0; i <= numShapes; i++) {
-    ellipse(position, 0, shapeSize, shapeSize)
-    rotate(angle)
-  }
-  pop()
-}
-
-function internalHexagon() {
-  const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const numShapes = sides
-  const angle = 360 / numShapes
-  const position = (SYMBOL_SIZE / 2) - (shapeSize / int(random(2, 4)))
-  fill(getRandomFromPalette())
-  blendMode(MULTIPLY)
-  stroke("black")
-  strokeWeight(spessore)
-  push()
-  translate(width / 2, height / 2)
-  for (let i = 0; i <= numShapes; i++) {
-    hexagon(position, 0, SYMBOL_SIZE / 14)
-    rotate(angle)
-  }
-  pop()
-}
-
-function externalCircle() {
-  const numShapes = sides
-  const angle = 360 / numShapes
-  const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const position = (SYMBOL_SIZE / 3) - (shapeSize * 2)
-  fill(getRandomFromPalette())
-  blendMode(MULTIPLY)
-  stroke("black")
-  strokeWeight(spessore)
-  push()
-  translate(width / 2, height / 2)
-  for (let i = 0; i <= numShapes; i++) {
-    ellipse(position, 0, shapeSize / 6, shapeSize / 6)
-    rotate(angle)
-  }
-  pop()
-}
-
-function externalHexagon() {
-  const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const numShapes = sides
-  const angle = 360 / numShapes
-  const position = (SYMBOL_SIZE / 2.8) - (shapeSize * 2)
-  fill(getRandomFromPalette())
-  blendMode(MULTIPLY)
-  stroke("black")
-  strokeWeight(spessore)
-  push()
-  translate(width / 2, height / 2)
-  for (let i = 0; i <= numShapes; i++) {
-    hexagon(position, 0, SYMBOL_SIZE / 16)
+    hexagon(position, 0, SYMBOL_SIZE / divHex4)
     rotate(angle)
   }
   pop()
@@ -236,12 +181,12 @@ roleSelect.addEventListener('change', (e) => {
     draw()
   } else if (paletteValue == "Uomo") {
     clear()
-    externalHexagon()
+    myHexagon(2.8,0.5,0.5,16)
     defaultMen()
     draw()
   } else if (paletteValue == "Donna") {
     clear()
-    externalCircle()
+    myCircle(3,0.5,0.5,6)
     defaultWomen()
     draw()
   }
@@ -255,12 +200,12 @@ roleSelect2.addEventListener('change', (e) => {
     draw()
   } else if (paletteValue == "Uomo") {
     clear()
-    externalHexagon()
+    myHexagon(2.8,0.5,0.5,16)
     defaultMen()
     draw()
   } else if (paletteValue == "Donna") {
     clear()
-    externalCircle()
+    myCircle(3,0.5,0.5,6)
     defaultWomen()
     draw()
   }
@@ -293,12 +238,12 @@ function Randomize() {
     draw()
   } else if (paletteValue == "Uomo") {
     clear()
-    externalHexagon()
+    myHexagon(2.8,0.5,0.5,16)
     defaultMen()
     draw()
   } else if (paletteValue == "Donna") {
     clear()
-    externalCircle()
+    myCircle(3,0.5,0.5,6)
     defaultWomen()
     draw()
   }
