@@ -249,16 +249,16 @@ roleSelect.addEventListener('change', (e) => {
 
 const roleSelect2 = document.getElementById('role2');
 roleSelect2.addEventListener('change', (e) => {
-  PaletteValue = e.target.value
-  if (PaletteValue == "Sesso") {
+  paletteValue = e.target.value
+  if (paletteValue == "Sesso") {
     clear()
     draw()
-  } else if (PaletteValue == "Uomo") {
+  } else if (paletteValue == "Uomo") {
     clear()
     externalHexagon()
     defaultMen()
     draw()
-  } else if (PaletteValue == "Donna") {
+  } else if (paletteValue == "Donna") {
     clear()
     externalCircle()
     defaultWomen()
