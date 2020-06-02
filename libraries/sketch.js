@@ -1,7 +1,7 @@
 //Dichiaro le variabili che mi servono, alcune di 
 //esse cambieranno in base al valore dei select
 const SYMBOL_SIZE = 350
-let SIDES = 2
+let sides = 2
 let MenPalette = []
 let WomenPalette = []
 let DefaultPalette = []
@@ -97,11 +97,11 @@ function outlineHexagon() {
 
 function advancedLines() {
   const stepOut = 8
-  const numSteps = (SIDES * floor(random(1, 3)))
+  const numSteps = (sides * floor(random(1, 3)))
   const step = (SYMBOL_SIZE / 2) / numSteps
   const start = floor(random(0, numSteps))
   const stop = floor(random(start, numSteps + 1))
-  let numShapes = SIDES*1.5
+  let numShapes = sides*1.5
   const angle = 360 / numShapes
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
@@ -117,7 +117,7 @@ function advancedLines() {
 }
 
 function defaultLines() {
-  let numShapes = SIDES
+  let numShapes = sides
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
   stroke("black")
@@ -135,7 +135,7 @@ function defaultLines() {
 }
 
 function internalCirles1() {
-  const numShapes = SIDES
+  const numShapes = sides
   const angle = 360 / numShapes
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
   const position = (SYMBOL_SIZE / 4) - (shapeSize / floor(random(4, 8)))
@@ -153,7 +153,7 @@ function internalCirles1() {
 }
 
 function internalCirles2() {
-  const numShapes = SIDES
+  const numShapes = sides
   const angle = 360 / numShapes
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
   const position = (SYMBOL_SIZE / 2) - (shapeSize / 2)
@@ -172,7 +172,7 @@ function internalCirles2() {
 
 function internalHexagon() {
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const numShapes = SIDES
+  const numShapes = sides
   const angle = 360 / numShapes
   const position = (SYMBOL_SIZE / 2) - (shapeSize / floor(random(2, 4)))
   fill(getRandomFromPalette())
@@ -189,7 +189,7 @@ function internalHexagon() {
 }
 
 function externalCircle() {
-  const numShapes = SIDES
+  const numShapes = sides
   const angle = 360 / numShapes
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
   const position = (SYMBOL_SIZE / 3) - (shapeSize * 2)
@@ -208,7 +208,7 @@ function externalCircle() {
 
 function externalHexagon() {
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
-  const numShapes = SIDES
+  const numShapes = sides
   const angle = 360 / numShapes
   const position = (SYMBOL_SIZE / 2.8) - (shapeSize * 2)
   fill(getRandomFromPalette())
@@ -229,8 +229,8 @@ function externalHexagon() {
 const roleSelect = document.getElementById('role');
 roleSelect.addEventListener('change', (e) => {
   esperienza = e.target.value
-  SIDES = esperienza
-  spessore = SIDES / 2
+  sides = esperienza
+  spessore = sides / 2
   if (PaletteValue == "Sesso") {
     clear()
     draw()
