@@ -97,10 +97,10 @@ function outlineHexagon() {
 
 function advancedLines() {
   const stepOut = 8
-  const numSteps = (sides * floor(random(1, 3)))
+  const numSteps = (sides * int(random(1, 3)))
   const step = (SYMBOL_SIZE / 2) / numSteps
   const start = int(random(0, numSteps))
-  const stop = floor(random(start, numSteps + 1))
+  const stop = int(random(start, numSteps + 1))
   let numShapes = sides*1.5
   const angle = 360 / numShapes
   fill(getRandomFromPalette())
@@ -174,7 +174,7 @@ function internalHexagon() {
   const shapeSize = (SYMBOL_SIZE / 2) * 0.93
   const numShapes = sides
   const angle = 360 / numShapes
-  const position = (SYMBOL_SIZE / 2) - (shapeSize / floor(random(2, 4)))
+  const position = (SYMBOL_SIZE / 2) - (shapeSize / int(random(2, 4)))
   fill(getRandomFromPalette())
   blendMode(MULTIPLY)
   stroke("black")
@@ -271,15 +271,18 @@ roleSelect2.addEventListener('change', (e) => {
 //cambiamento del valore del select
 function getRandomFromPalette() {
   if (paletteValue == "Sesso") {
-    const rando = floor(random(0, defaultPalette.length))
+    const rando = int(random(0, defaultPalette.length))
     return defaultPalette[rando]
   } else if (paletteValue == "Uomo") {
-    const rando = floor(random(0, menPalette.length))
+    const rando = int(random(0, menPalette.length))
+    console.log(rando)
     return menPalette[rando]
   } else if (paletteValue == "Donna") {
-    const rando = floor(random(0, womenPalette.length))
+    const rando = int(random(0, womenPalette.length))
+    console.log(rando)
     return womenPalette[rando]
   }
+
 }
 
 //Funzione che mi permette di randomizzare determinate forme e le palette sempre a seconda dei valori 
