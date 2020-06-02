@@ -220,11 +220,9 @@ function getRandomFromPalette() {
     return defaultPalette[rando]
   } else if (paletteValue == "Uomo") {
     const rando = int(random(0, menPalette.length))
-    console.log(rando)
     return menPalette[rando]
   } else if (paletteValue == "Donna") {
     const rando = int(random(0, womenPalette.length))
-    console.log(rando)
     return womenPalette[rando]
   }
 
