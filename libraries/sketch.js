@@ -2,9 +2,9 @@
 //esse cambieranno in base al valore dei select
 const SYMBOL_SIZE = 350
 let sides = 2
-let MenPalette = []
-let WomenPalette = []
-let DefaultPalette = []
+let menPalette = []
+let womenPalette = []
+let defaultPalette = []
 let PaletteValue = "Sesso"
 let esperienza = 2
 let spessore = 1 
@@ -14,14 +14,14 @@ function setup() {
   createCanvas(500, 500 )
 
   //Inizializzo le palette per le forme
-  MenPalette = [
+  menPalette = [
     color(239, 160, 11, 70), //giallo
     color(2, 103, 193, 70), //blue
     color(220, 73, 58, 70), //rosso
     color(73, 67, 49, 70), //verdone
     color(31, 36, 33, 70) //verde scuore
   ]
-  WomenPalette = [
+  womenPalette = [
     color(255, 52, 154, 70), //rosa
     color(213, 86, 114, 70), //violetto
     color(188, 244, 245, 70), //celeste
@@ -29,7 +29,7 @@ function setup() {
     color(221, 17, 85, 70) //rossaccio
   ]
 
-  DefaultPalette = [
+  defaultPalette = [
     color(255, 255, 255)
   ]
   noLoop()
@@ -271,14 +271,14 @@ roleSelect2.addEventListener('change', (e) => {
 //cambiamento del valore del select
 function getRandomFromPalette() {
   if (PaletteValue == "Sesso") {
-    const rando = floor(random(0, DefaultPalette.length))
-    return DefaultPalette[rando]
+    const rando = floor(random(0, defaultPalette.length))
+    return defaultPalette[rando]
   } else if (PaletteValue == "Uomo") {
-    const rando = floor(random(0, MenPalette.length))
-    return MenPalette[rando]
+    const rando = floor(random(0, menPalette.length))
+    return menPalette[rando]
   } else if (PaletteValue == "Donna") {
-    const rando = floor(random(0, WomenPalette.length))
-    return WomenPalette[rando]
+    const rando = floor(random(0, womenPalette.length))
+    return womenPalette[rando]
   }
 }
 
